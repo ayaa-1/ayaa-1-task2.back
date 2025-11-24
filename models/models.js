@@ -3,6 +3,7 @@
     {
         title :{type:String, required:true},
         price :{type:Number, required:true},
+        completed :{type:String, required:true},
     },
     { versionkey:false , timestamps:true}
     
