@@ -14,7 +14,22 @@ router.post('/',createtask);
 router.put('/:id', updatetask);
 router.patch('/:id/complete',completetask);
 router.delete('/', deletetask);
- export default router;
  
+
+import Task from "../models/Task.js";
+import { verifyToken } from "../middleware_auth.js";
+
+router.post("/", verifyToken, async (req, res) => {
+  const task = await Task.create(req.body);
+  res.status(201).json(task);
+});
+
+
+router.get("/", verifyToken, async (req, res) => {
+  const task = await Task.find();
+  res.json(task);
+});
+
+export default router;
 
      

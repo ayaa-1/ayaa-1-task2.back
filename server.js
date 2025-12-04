@@ -3,8 +3,7 @@
   import cors from 'cors';
   app.use (cors());
 
-  import  dotenv from "dotenv";
-  dotenv.config();
+  import " dotenv/ config";
  import  tasksroutes from './routes/router.js';
   app.use(express.json());
   app.use("/tasks",tasksroutes);
